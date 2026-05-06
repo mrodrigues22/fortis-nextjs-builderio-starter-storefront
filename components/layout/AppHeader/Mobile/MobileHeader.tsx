@@ -17,13 +17,21 @@ interface MobileHeaderProps {
   children?: React.ReactNode
   hideIcons?: boolean
   onAccountIconClick?: () => void
+  isTransparentPage?: boolean
 }
 
 const TRANSPARENT_PAGES = ['/', '/new-home-page']
 
-const MobileHeader = ({ children, hideIcons = false }: MobileHeaderProps) => {
+const MobileHeader = ({
+  children,
+  hideIcons = false,
+  isTransparentPage: isTransparentPageProp,
+}: MobileHeaderProps) => {
   const router = useRouter()
-  const isTransparentPage = TRANSPARENT_PAGES.includes(router.asPath.split('?')[0])
+  const isTransparentPage =
+    isTransparentPageProp !== undefined && isTransparentPageProp !== null
+      ? Boolean(isTransparentPageProp)
+      : TRANSPARENT_PAGES.includes(router.asPath.split('?')[0])
   const [hasScrolled, setHasScrolled] = useState(false)
 
   useEffect(() => {
