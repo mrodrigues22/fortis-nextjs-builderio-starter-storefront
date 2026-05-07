@@ -117,7 +117,7 @@ const KiboHeader = (props: KiboHeaderProps) => {
   const { t } = useTranslation('common')
   const router = useRouter()
   const theme = useTheme()
-  const mdScreen = useMediaQuery(theme.breakpoints.up('md'))
+  const mdScreen = useMediaQuery(theme.breakpoints.up('lg'))
 
   const { createCustomerB2bAccount } = useCreateCustomerB2bAccountMutation()
 
