@@ -190,10 +190,11 @@ const NavigationBar = (props: any) => {
                   whiteSpace: 'nowrap',
                   textDecoration: 'none',
                   flexShrink: 0,
+                  cursor: 'pointer',
                   '&:hover': { bgcolor: 'rgb(10, 17, 56)' },
                 }}
               >
-                Contact
+                Contact &gt;
               </Box>
             </Link>
           </Box>
