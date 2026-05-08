@@ -170,32 +170,38 @@ const NavigationBar = (props: any) => {
             </Box>
 
             {/* Contact CTA button */}
-            <Link href="/contact-us" passHref legacyBehavior>
-              <Box
-                component="a"
-                sx={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  px: '20px',
-                  py: '10px',
-                  bgcolor: '#30299A',
-                  color: '#FFFFFF',
-                  borderRadius: '0px 20px 0px 20px',
-                  fontFamily: 'Poppins, sans-serif',
-                  fontWeight: 400,
-                  fontSize: '15px',
-                  lineHeight: '150%',
-                  letterSpacing: '-0.005em',
-                  whiteSpace: 'nowrap',
-                  textDecoration: 'none',
-                  flexShrink: 0,
-                  cursor: 'pointer',
-                  '&:hover': { bgcolor: 'rgb(10, 17, 56)' },
-                }}
-              >
-                Contact &gt;
-              </Box>
+            <Link
+              href="/contact-us"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '10px 20px',
+                backgroundColor: '#30299A',
+                color: '#FFFFFF',
+                borderRadius: '0px 20px 0px 20px',
+                fontFamily: 'Poppins, sans-serif',
+                fontWeight: 400,
+                fontSize: '15px',
+                lineHeight: '150%',
+                letterSpacing: '-0.005em',
+                whiteSpace: 'nowrap',
+                textDecoration: 'none',
+                flexShrink: 0,
+                cursor: 'pointer',
+                userSelect: 'none',
+                WebkitUserSelect: 'none',
+              }}
+              onMouseEnter={(e) => {
+                const el = e.currentTarget as HTMLElement
+                el.style.backgroundColor = 'rgb(10, 17, 56)'
+              }}
+              onMouseLeave={(e) => {
+                const el = e.currentTarget as HTMLElement
+                el.style.backgroundColor = '#30299A'
+              }}
+            >
+              {'Contact >'}
             </Link>
           </Box>
         )}

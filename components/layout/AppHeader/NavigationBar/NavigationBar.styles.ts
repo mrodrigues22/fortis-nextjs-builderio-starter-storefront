@@ -32,7 +32,7 @@ export const navWrapperStyles: SxProps = {
     fontWeight: 400,
     fontSize: '15px',
     letterSpacing: '-0.005em',
-    width: '100%',
+    width: '100% !important',
     paddingLeft: '32px', // 20px icon + 12px gap
     '&::placeholder': { color: 'rgba(255,255,255,0.7)' },
   },
