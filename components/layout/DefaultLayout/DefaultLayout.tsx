@@ -76,7 +76,10 @@ const DefaultLayout = ({ pageProps, children }: { pageProps: any; children: Reac
   // because global.css sets height:100% + overflow-x:hidden on both.
   useEffect(() => {
     if (typeof window === 'undefined') return
-    if (window.location.hash) return
+    // Chrome strips text fragments (#:~:text=...) from window.location before React runs,
+    // so check router.asPath which preserves the original URL.
+    const pathHash = router.asPath.split('#')[1] ?? ''
+    if (pathHash || window.location.hash) return
     const forceTop = () => {
       window.scrollTo(0, 0)
       if (document.documentElement) document.documentElement.scrollTop = 0
